@@ -1,0 +1,97 @@
+.modalBackdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 246, 246, 0.659);
+  z-index: 10;
+}
+.modalContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 60vw;
+  height: 60vh;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 11;
+}
+
+.bookingInfo {
+  font-size: 1.6rem;
+  padding: 2rem;
+}
+
+.bookingHeading {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+.inputBox {
+  border-bottom: 1px solid var(--color-white);
+  margin-bottom: 2rem;
+}
+.bookingInput {
+  text-align: center;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border: none;
+  padding: 0.6rem;
+  outline: none;
+}
+
+.inputBox {
+  width: 50%;
+  text-align: center;
+}
+
+.userData {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dateData {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.bookingSelect {
+  text-align: center;
+  width: 90%;
+  font-size: 1.6rem;
+  padding: 1rem;
+  color: white;
+  background-color: var(--color-black);
+  padding: 0.6rem;
+  border: none;
+  outline: none;
+}
+
+.salonData {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.bookingBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+ 
+}
+
+.bookingImg {
+  
+  background-size: cover;
+  background-position: center;
+  background-color: blue;
+}

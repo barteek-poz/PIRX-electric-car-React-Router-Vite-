@@ -1,0 +1,102 @@
+.footerWrapper {
+  width: 100vw;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.footerContainer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 4rem;
+  border-radius: 20px;
+}
+
+.footerHeading {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.footerText {
+  font-size: 1.6rem;
+  line-height: 26px;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.footerInputs {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 6rem;
+  font-size: 1.8rem;
+}
+.footerInputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-white);
+}
+.footerInput {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  width: 30rem;
+  border: none;
+  outline-width: thin;
+  padding: 1rem;
+}
+
+.footerInput:focus {
+  outline: none;
+}
+
+.footerBtn {
+  margin-left: -4rem;
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+  font-size: 2.4rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.footerBtn:hover {
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+.footerInfo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 8rem;
+}
+
+.footerLogo {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.footerIcon {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.footerLinksHeading {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.footerLinksList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 300;
+  gap: 1.4rem;
+  list-style: none;
+  margin-top: 2rem;
+  cursor: pointer;
+}

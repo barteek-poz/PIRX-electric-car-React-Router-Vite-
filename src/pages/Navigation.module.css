@@ -1,0 +1,54 @@
+
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 97%;
+  padding: 2rem;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border-radius: 20px;
+  list-style: none;
+  font-size: 1.4rem;
+  overflow: hidden;
+  z-index: 5;
+  transition: 0.4s;
+  
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8rem;
+}
+
+.navBtn {
+  outline: none;
+  text-decoration: none;
+  color: var(--color-white);
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 20px;
+}
+
+.navBtn:hover,
+.navBtn:active {
+  border: 1px solid var(--color-white);
+}
+
+.navBookBtn {
+  margin-right: 2rem;
+}

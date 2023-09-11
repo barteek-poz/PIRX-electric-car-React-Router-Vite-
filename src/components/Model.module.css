@@ -1,0 +1,66 @@
+.modelWrapper {
+    padding: 0rem 2rem 2rem 2rem;
+}
+.modelContainer {
+  display: flex;
+  background-color: var(--color-black);
+  border-radius: 20px;
+  overflow: hidden;
+
+}
+
+.modelText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    color: var(--color-white);
+    border-radius: 20px;
+}
+
+h3 {
+    font-size: 2.8rem;
+    letter-spacing: .2rem;
+    padding: 2rem;
+    margin-left: 2rem;
+    text-transform: uppercase;
+}
+
+.modelInfo {
+    font-size: 1.8rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    line-height: 26px;
+}
+
+.modelTextStats {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.8rem;
+    list-style: none;
+    margin-top: 4rem;
+    margin-left: 4rem;
+}
+
+.modelTextSpan {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-right: 5px;
+}
+    
+.swiper {
+  width: 50vw;
+  height: 70vh;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+}
+
+.swiperSlide {
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+}
+

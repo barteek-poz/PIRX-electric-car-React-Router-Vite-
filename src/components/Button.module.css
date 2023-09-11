@@ -1,0 +1,15 @@
+.button {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-transform: uppercase;
+    padding: 1rem 1.4rem;
+    transition: all .3s ;
+    border: 1px solid var(--color-white);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.button:hover, .button:active {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
