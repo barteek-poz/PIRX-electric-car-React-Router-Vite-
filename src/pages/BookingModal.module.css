@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 60vw;
-  height: 60vh;
+  height: 70vh;
   background-color: var(--color-black);
   color: var(--color-white);
   border-radius: 20px;
@@ -32,66 +32,62 @@
   margin-bottom: 6rem;
 }
 .inputBox {
-  border-bottom: 1px solid var(--color-white);
-  margin-bottom: 2rem;
-}
-.bookingInput {
-  text-align: center;
+  margin-bottom: 0.6rem;
   width: 100%;
+}
+
+.bookingInput {
+  width: 100%;
+  text-align: center;
   font-size: 1.6rem;
   color: var(--color-white);
   background-color: var(--color-black);
-  border: none;
+  border: 1px solid var(--color-white);
+  border-width: 0px 0px 1px 0px;
   padding: 0.6rem;
   outline: none;
+  margin-bottom: 0.6rem;
 }
 
-.inputBox {
-  width: 50%;
-  text-align: center;
+.bookingInputInvalid {
+  border-color: var(--color-red);
+
 }
 
+.dateData,
 .userData {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
-.dateData {
+.datePicker {
   display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-.bookingSelect {
-  text-align: center;
-  width: 90%;
-  font-size: 1.6rem;
-  padding: 1rem;
-  color: white;
-  background-color: var(--color-black);
-  padding: 0.6rem;
-  border: none;
-  outline: none;
+  flex-direction: column;
 }
 
 .salonData {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 4rem;
 }
 
 .bookingBtn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   gap: 6rem;
- 
 }
 
 .bookingImg {
-  
   background-size: cover;
   background-position: center;
   background-color: blue;
+}
+
+.inputError {
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--color-red);
+  margin-bottom: 1.4rem;
 }
