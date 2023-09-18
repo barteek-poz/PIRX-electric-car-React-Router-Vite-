@@ -19,12 +19,11 @@ const Backdrop = (props) => {
 
 const ModalOverlay = (props) => {
   const [date, setDate] = useState(null);
-  
+  const [hourHasError, setHourHasError] = useState(false);
 
   // NAME VALIDATION
   const {
     inputValue: nameValue,
-    valueIsValid: nameIsValid,
     hasError: nameHasError,
     valueChangeHandler: nameChangeHandler,
     inputBlurHandler: nameBlurHandler,
@@ -38,7 +37,6 @@ const ModalOverlay = (props) => {
   // MAIL VALIDATION
   const {
     inputValue: mailValue,
-    valueIsValid: mailIsValid,
     hasError: mailHasError,
     valueChangeHandler: mailChangeHandler,
     inputBlurHandler: mailBlurHandler,
@@ -52,7 +50,6 @@ const ModalOverlay = (props) => {
   // PHONE VALIDATION
   const {
     inputValue: phoneValue,
-    valueIsValid: phoneIsValid,
     hasError: phoneHasError,
     valueChangeHandler: phoneChangeHandler,
     inputBlurHandler: phoneBlurHandler,
@@ -62,40 +59,28 @@ const ModalOverlay = (props) => {
     ? `${styles.bookingInput} ${styles.bookingInputInvalid}`
     : `${styles.bookingInput}`;
 
-  // SELECT VALIDATION
-  const selectChangeHandler = (e) => {
-    setSelectedValue(e.target.value);
-    setSelectIsTouched(true)
-  
-  };
+  // SELECT HOUR VALIDATION
+  const {
+    selectedValue: hourValue,
+    selectValueHandler: hourValueHandler,
+    selectReset: hourReset,
+    selectHasError: hourError
+  } = useSelect();
 
-  
-const {selectedValue: selectedHour, setSelectedValue: setSelectedHour} = useSelect()
+  // FORM VALIDATION
 
-
-
-
-// FORM VALIDATION
-  let bookingFormIsValid = false;
-
-  if (nameIsValid && mailIsValid && phoneIsValid) {
-    bookingFormIsValid = true;
-  }
-
-  const bookingFormSubmitHandler = (e) => {
-    e.preventDefault();
-    if(selectedHour === 'default') {
-      console.log('test')
+  const submitFormHandler = () => {
+    if (hourError) {
+      console.log("error");
+      setHourHasError(true);
+      return
+    } else {
+      hourReset
     }
-    if (nameIsValid && mailIsValid && phoneIsValid && selectIsValid) {
-      resetName();
-      resetMail();
-      resetPhone();
-    } 
   };
 
   return (
-    <form className={styles.modalContainer} onSubmit={bookingFormSubmitHandler}>
+    <form className={styles.modalContainer} name="bookingForm">
       <div className={styles.bookingInfo}>
         <h2 className={styles.bookingHeading}>
           Zarezerwuj jazdę próbną w PIRX
@@ -163,8 +148,12 @@ const {selectedValue: selectedHour, setSelectedValue: setSelectedHour} = useSele
             <select
               name="bookingHour"
               className={`${styles.bookingInput}`}
-              onChange={setSelectedHour}>
-              <option className={styles.option} selected value={selectedHour} disabled>
+              onChange={(e) => hourValueHandler(e.target.value)}>
+              <option
+                className={styles.option}
+                selected
+                value={hourValue}
+                disabled>
                 Wybierz godzinę
               </option>
               <option value="10">10:00</option>
@@ -176,7 +165,11 @@ const {selectedValue: selectedHour, setSelectedValue: setSelectedHour} = useSele
               <option value="16">16:00</option>
               <option value="17">17:00</option>
             </select>
-            <p className={styles.inputError}>Wybierz godzinę wizyty</p>
+            <p
+              className={styles.inputError}
+              style={{ visibility: hourHasError ? "visible" : "hidden" }}>
+              Wybierz godzinę wizyty
+            </p>
           </div>
         </div>
 
@@ -207,7 +200,7 @@ const {selectedValue: selectedHour, setSelectedValue: setSelectedHour} = useSele
         </div>
 
         <div className={styles.bookingBtn}>
-          <Button onClick={bookingFormSubmitHandler}>Wyślij</Button>
+          <Button onClick={submitFormHandler}>Wyślij</Button>
           <Button onClick={props.onCloseModal}>Anuluj</Button>
         </div>
       </div>
