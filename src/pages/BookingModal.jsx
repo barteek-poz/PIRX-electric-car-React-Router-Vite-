@@ -20,6 +20,9 @@ const Backdrop = (props) => {
 const ModalOverlay = (props) => {
   const [date, setDate] = useState(null);
   const [hourHasError, setHourHasError] = useState(false);
+  const [salonHasError, setSalonHasError] = useState(false);
+  const [carHasError, setCarHasError] = useState(false);
+  
 
   // NAME VALIDATION
   const {
@@ -59,6 +62,7 @@ const ModalOverlay = (props) => {
     ? `${styles.bookingInput} ${styles.bookingInputInvalid}`
     : `${styles.bookingInput}`;
 
+
   // SELECT HOUR VALIDATION
   const {
     selectedValue: hourValue,
@@ -67,12 +71,34 @@ const ModalOverlay = (props) => {
     selectHasError: hourError
   } = useSelect();
 
+  // SELECT SALON VALIDATION
+  const {
+    selectedValue: salonValue,
+    selectValueHandler: salonValueHandler,
+    selectReset: salonReset,
+    selectHasError: salonError
+  } = useSelect();
+
+  // SELECT CAR VALIDATION
+  const {
+    selectedValue: carValue,
+    selectValueHandler: carValueHandler,
+    selectReset: carReset,
+    selectHasError: carError
+  } = useSelect();
+
   // FORM VALIDATION
 
-  const submitFormHandler = () => {
+  const submitFormHandler = (e) => {
+    e.preventDefault()
+    setHourHasError(false)
+    setSalonHasError(false)
+    setCarHasError(false)
     if (hourError) {
       console.log("error");
       setHourHasError(true);
+      setSalonHasError(true)
+      setCarHasError(true)
       return
     } else {
       hourReset
@@ -148,11 +174,12 @@ const ModalOverlay = (props) => {
             <select
               name="bookingHour"
               className={`${styles.bookingInput}`}
+                value={hourValue}
               onChange={(e) => hourValueHandler(e.target.value)}>
               <option
                 className={styles.option}
+                value="default"
                 selected
-                value={hourValue}
                 disabled>
                 Wybierz godzinę
               </option>
@@ -175,7 +202,9 @@ const ModalOverlay = (props) => {
 
         <div className={styles.salonData}>
           <div className={styles.inputBox}>
-            <select name="bookingSalon" className={`${styles.bookingInput}`}>
+            <select name="bookingSalon" className={`${styles.bookingInput}`}
+             value={salonValue}
+             onChange={(e) => salonValueHandler(e.target.value)}>
               <option className={styles.option} value="default" disabled>
                 Wybierz salon
               </option>
@@ -183,11 +212,14 @@ const ModalOverlay = (props) => {
               <option value="warsaw">Warszawa</option>
               <option value="cracow">Kraków</option>
             </select>
-            <p className={styles.inputError}>Wybierz salon</p>
+            <p className={styles.inputError}
+            style={{ visibility: salonHasError ? "visible" : "hidden" }}>Wybierz salon</p>
           </div>
 
           <div className={styles.inputBox}>
-            <select name="bookingSalon" className={`${styles.bookingInput}`}>
+            <select name="bookingSalon" className={`${styles.bookingInput}`}
+            value={carValue}
+            onChange={(event) => carValueHandler(event.target.value)}>
               <option className={styles.option} value="default" disabled>
                 Wybierz model auta
               </option>
@@ -195,7 +227,8 @@ const ModalOverlay = (props) => {
               <option value="anna">Anna</option>
               <option value="nostromo">Nostromo</option>
             </select>
-            <p className={styles.inputError}>Wybierz model auta</p>
+            <p className={styles.inputError}
+            style={{ visibility: carHasError ? "visible" : "hidden" }}>Wybierz model auta</p>
           </div>
         </div>
 
