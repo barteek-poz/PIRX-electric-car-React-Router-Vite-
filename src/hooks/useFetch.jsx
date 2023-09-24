@@ -6,7 +6,7 @@ const useFetch = (url) => {
     const modelsFetch = async () => {
       const res = await fetch(url);
       const resData = await res.json();
-      setData(resData);
+      setData(resData)
     };
     modelsFetch();
   }, []);

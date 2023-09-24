@@ -1,26 +1,16 @@
-import styles from "./BookingModal.module.css";
-import React, { useContext, useState } from "react";
-import { createPortal } from "react-dom";
+import React from "react";
 import Select from "react-select";
-import { useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
+import styles from "./BookingForm.module.css";
 import bookingImg from "../img/booking.jpg";
-import Button from "../components/Button";
-import ModalContext from "../context/modalContext";
+import Button from "./Button";
 
-const Backdrop = (props) => {
-  return (
-    <div className={styles.modalBackdrop} onClick={props.onCloseModalHandler}></div>
-  );
-};
-
-const ModalOverlay = (props) => {
+const BookingForm = () => {
   const [salon, setSalon] = useState(null);
   const [model, setModel] = useState(null);
   const [errorSalon, setErrorSalon] = useState(false);
   const [errorModel, setErrorModel] = useState(false);
-  const [formValid, setFormIsValid] = useState(false)
-
-  const ctx = useContext(ModalContext) // ustalic dlaczego nie dziala props na onCloseModal
+  const [formValid, setFormIsValid] = useState(false);
 
   const carModels = [
     { value: "Lena", label: "Lena" },
@@ -60,7 +50,7 @@ const ModalOverlay = (props) => {
 
   const modelChangeHandler = (selectedModel) => {
     setModel(selectedModel);
-    setErrorModel(false)
+    setErrorModel(false);
   };
 
   const onSubmitForm = (data) => {
@@ -74,14 +64,13 @@ const ModalOverlay = (props) => {
       setModel(null);
       setSalon(null);
       reset();
-      setFormIsValid(true)
+      setFormIsValid(true);
     }
   };
 
   return (
-    <div className={styles.backdrop}>
-<div className={styles.formWrapper}>
-      <form className={styles.formInputs}>
+    <div className={styles.formWrapper}>
+      <form onSubmit={handleSubmit(onSubmitForm)} className={styles.formInputs}>
         <div className={styles.formHeader}>
           <h2 className={styles.formHeading}>Zarezerwuj jazdę próbną w PIRX</h2>
           <p>
@@ -169,37 +158,25 @@ const ModalOverlay = (props) => {
             onChange={modelChangeHandler}
             options={carModels}
             styles={selectStyles}></Select>
-            {errorModel && <p className={styles.errorInput}>Wybierz model</p>}
+          {errorModel && <p className={styles.errorInput}>Wybierz model</p>}
         </div>
-       {formValid && <p className={styles.formConfirm}>Formularz został wysłany. Nasz konsultant niedługo skontakuje się z Tobą w celu umówienia jazdy próbnej.</p>}
+        {formValid && (
+          <p className={styles.formConfirm}>
+            Formularz został wysłany. Nasz konsultant niedługo skontakuje się z
+            Tobą w celu umówienia jazdy próbnej.
+          </p>
+        )}
         <div className={styles.formBtns}>
-          {!formValid && <Button onClick={handleSubmit(onSubmitForm)} >Wyślij</Button>}
-         {!formValid && <Button onClick={ctx.onCloseModalHandler}>Anuluj</Button>}
-          {formValid && <Button >Zamknij</Button>}
+          {!formValid && <Button>Wyślij</Button>}
+          {!formValid && <Button>Anuluj</Button>}
+          {formValid && <Button>Zamknij</Button>}
         </div>
       </form>
       <div
         className={styles.bookingImg}
         style={{ backgroundImage: `url(${bookingImg})` }}></div>
     </div>
-    </div>
-    
   );
 };
 
-const BookingModal = (props) => {
-  return (
-    <>
-      {createPortal(
-        <Backdrop onCloseModal={props.onCloseModalHandler} />,
-        document.getElementById("backdrop-root")
-      )}
-      {createPortal(
-        <ModalOverlay onCloseModal={props.onCloseModalHandler} />,
-        document.getElementById("overlay-root")
-      )}
-    </>
-  );
-};
-
-export default BookingModal;
+export default BookingForm;
