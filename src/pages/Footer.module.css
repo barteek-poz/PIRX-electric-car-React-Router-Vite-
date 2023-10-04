@@ -64,6 +64,14 @@
   background-color: var(--color-white);
 }
 
+
+.errorInput {
+
+  color: var(--color-red);
+  font-size: 1.4rem;
+  margin-top: .4rem;
+}
+
 .footerInfo {
   display: flex;
   align-items: flex-start;

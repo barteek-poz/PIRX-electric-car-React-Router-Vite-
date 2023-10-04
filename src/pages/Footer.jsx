@@ -7,8 +7,22 @@ import {
   BsCheckLg,
 } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
+import { useForm } from "react-hook-form";
+import Button from "../components/Button";
 
 const Footer = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    control,
+  } = useForm();
+
+  const onSubmitForm = (data) => {
+    console.log(data.errors);
+  };
+
   return (
     <div className={styles.footerWrapper}>
       <section className={styles.footerContainer} id="footer">
@@ -21,23 +35,59 @@ const Footer = () => {
             przeznaczonymi dla klubowiczów.
           </p>
         </div>
-        <div className={styles.footerInputs}>
+        <form
+          onSubmit={handleSubmit(onSubmitForm)}
+          className={styles.footerInputs}>
+          <div>
             <div className={styles.footerInputContainer}>
-            <BsPerson />
-          <input placeholder="Imię" className={styles.footerInput}></input>
+              <BsPerson />
+              <input
+                className={styles.footerInput}
+                placeholder="Imię"
+                type="text"
+                name="name"
+                {...register("name", {
+                  required: "Name is required",
+                })}></input>
             </div>
-         <div className={styles.footerInputContainer}>
-         <FiMail />
-          <input placeholder="Adres email" className={styles.footerInput}></input>
-         </div>
-          <BsCheckLg className={styles.footerBtn}/>
-        </div>
+            {errors.name && errors.name.type === "required" && (
+              <p className={styles.errorInput}>Podaj imię</p>
+            )}
+          </div>
+
+          <div>
+            <div className={styles.footerInputContainer}>
+              <FiMail />
+              <input
+                className={styles.footerInput}
+                placeholder="Email"
+                type="text"
+                name="email"
+                {...register("email", {
+                  required: "Email is requierd",
+                  pattern: {
+                    value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                    message: "Wymagany format : xxx@xx.xx",
+                  },
+                })}></input>
+            </div>
+            {errors.email && errors.email.type === "required" && (
+              <p className={styles.errorInput}>Podaj adres email</p>
+            )}
+            {errors.email && errors.email.type === "pattern" && (
+              <p className={styles.errorInput}>{errors.email.message}</p>
+            )}
+          </div>
+
+          <Button onClick={handleSubmit(onSubmitForm)}>Wyślij</Button>
+          <BsCheckLg className={styles.footerBtn} />
+        </form>
         <div className={styles.footerInfo}>
           <div>
             <h4 className={styles.footerLogo}>Pirx</h4>
-            <BsFacebook className={styles.footerIcon}/>
-            <BsTwitter className={styles.footerIcon}/>
-            <BsInstagram className={styles.footerIcon}/>
+            <BsFacebook className={styles.footerIcon} />
+            <BsTwitter className={styles.footerIcon} />
+            <BsInstagram className={styles.footerIcon} />
           </div>
           <div className={styles.footerLinks}>
             <p className={styles.footerLinksHeading}>O nas</p>
