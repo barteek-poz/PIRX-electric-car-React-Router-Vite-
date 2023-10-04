@@ -1,4 +1,5 @@
 import styles from "./Footer.module.css";
+import { useState } from "react";
 import {
   BsFacebook,
   BsTwitter,
@@ -11,6 +12,8 @@ import { useForm } from "react-hook-form";
 import Button from "../components/Button";
 
 const Footer = () => {
+  const [formIsValid, setFormIsValid] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -20,7 +23,10 @@ const Footer = () => {
   } = useForm();
 
   const onSubmitForm = (data) => {
-    console.log(data.errors);
+    if (data) {
+      setFormIsValid(true);
+    }
+    reset();
   };
 
   return (
@@ -78,9 +84,11 @@ const Footer = () => {
               <p className={styles.errorInput}>{errors.email.message}</p>
             )}
           </div>
-
-          <Button onClick={handleSubmit(onSubmitForm)}>Wyślij</Button>
-          <BsCheckLg className={styles.footerBtn} />
+          {!formIsValid && (
+            <Button onClick={handleSubmit(onSubmitForm)}>Wyślij</Button>
+          )}
+          {formIsValid && <BsCheckLg className={styles.footerBtn} />}
+            
         </form>
         <div className={styles.footerInfo}>
           <div>
