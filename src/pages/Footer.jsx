@@ -87,8 +87,14 @@ const Footer = () => {
           {!formIsValid && (
             <Button onClick={handleSubmit(onSubmitForm)}>Wyślij</Button>
           )}
-          {formIsValid && <BsCheckLg className={styles.footerBtn} />}
-            
+          {formIsValid && (
+            <div className={styles.footerConfirm}>
+              <p>
+                Wysłano 
+              </p>
+              <BsCheckLg className={styles.footerBtn} />
+            </div>
+          )}
         </form>
         <div className={styles.footerInfo}>
           <div>
