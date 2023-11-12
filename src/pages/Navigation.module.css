@@ -52,3 +52,29 @@
 .navBookBtn {
   margin-right: 2rem;
 }
+
+.burgerMenu {
+  font-size: 4rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.burgerMenu:hover {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 75rem) {
+  .nav {
+    width: 95%
+  }
+
+  .navLinks {
+    gap: 4rem
+  }
+}
+
+@media (max-width:56.25rem) {
+  .nav {
+    width: 90%;
+  }
+}

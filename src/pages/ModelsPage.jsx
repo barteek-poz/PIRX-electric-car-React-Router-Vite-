@@ -12,7 +12,6 @@ import anna3 from "../img/ana3.jpg";
 import nostromo1 from "../img/nostromo1.jpg";
 import nostromo2 from "../img/nostromo2.jpg";
 import nostromo3 from "../img/nostromo3.jpg";
-import { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
 
 const modelsImg = {

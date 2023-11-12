@@ -60,7 +60,19 @@ h3 {
 .swiperSlide {
   width: 50%;
   height: 50%;
-  background-size: cover;
+  background-size:cover;
   background-position: center;
+  
 }
 
+@media (max-width: 75rem) {
+  .modelTextStats{
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .swiper {
+    width: 50vw;
+  height: 60vh;
+  }
+}

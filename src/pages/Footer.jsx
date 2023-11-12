@@ -19,14 +19,17 @@ const Footer = () => {
     handleSubmit,
     formState: { errors },
     reset,
-    control,
+    
   } = useForm();
 
   const onSubmitForm = (data) => {
     if (data) {
       setFormIsValid(true);
+      setTimeout(()=>{
+        setFormIsValid(false)
+      },5000);
     }
-    reset();
+    reset()
   };
 
   return (
