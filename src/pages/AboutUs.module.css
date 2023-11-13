@@ -63,3 +63,14 @@
     font-size: 1.6rem;
   }
 }
+
+@media (max-width: 56.25rem) {
+  .aboutUs {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+  }
+
+  .info {
+    margin-top: 0;
+  }
+}

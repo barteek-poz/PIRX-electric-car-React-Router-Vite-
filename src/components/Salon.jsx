@@ -11,10 +11,13 @@ const Salon = (props) => {
   
   return (
     <div className={styles.salonWrapper}>
+      <div className={styles.salonHeadMobile}>
       <h4 className={styles.salonHeading}>{props.data.city}</h4>
       <div
         className={styles.salonImg}
         style={{ backgroundImage: `url(${props.img})` }}></div>
+      </div>
+      <div className={styles.salonInfoMobile}>
       <ul className={styles.salonInfo}>
         <li>
           <FaLocationDot className={styles.salonIcon} /> {props.data.address}
@@ -34,6 +37,8 @@ const Salon = (props) => {
       </div>
       {ctx.bookingModal && <BookingModal />}
     </div>
+      </div>
+      
   );
 };
 

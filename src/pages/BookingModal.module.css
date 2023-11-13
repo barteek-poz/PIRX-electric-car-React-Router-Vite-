@@ -92,3 +92,46 @@
   background-color: blue;
 }
 
+@media (max-width: 68.75rem) {
+  .formWrapper {
+    width: 80vw;
+  }
+}
+@media (max-width: 56.25rem) {
+  .bookingImg {
+    display: none;
+  }
+
+  .formWrapper {
+    width: 70vw;
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .formHeader {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .formHeading {
+    font-size: 2.4rem;
+  }
+
+  .formInputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 0.5fr);
+    gap: 1rem;
+    align-self: self-start;
+    padding: 2rem;
+  }
+
+  .formInput {
+    margin-bottom: 0;
+  }
+
+  .formBtns {
+    justify-content: center;
+    gap: 8rem;
+  }
+}

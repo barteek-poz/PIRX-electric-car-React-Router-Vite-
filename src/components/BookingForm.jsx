@@ -1,6 +1,6 @@
 import React from "react";
 import Select from "react-select";
-import { useForm } from "react-hook-form";
+import { useForm, useState } from "react-hook-form";
 import styles from "./BookingForm.module.css";
 import bookingImg from "../img/booking.jpg";
 import Button from "./Button";

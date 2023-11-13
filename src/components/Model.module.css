@@ -76,3 +76,26 @@ h3 {
   height: 60vh;
   }
 }
+
+@media (max-width: 56.25rem) {
+  .modelWrapper {
+    margin-bottom: 2rem;
+  }
+
+  .modelTextStats {
+    margin-top: 2rem;
+  }
+
+  .modelText {
+    justify-content: start;
+  }
+
+  .modelContainer {
+    flex-direction: column;
+  }
+
+  .swiper {
+    width: 100vw;
+  }
+  
+}

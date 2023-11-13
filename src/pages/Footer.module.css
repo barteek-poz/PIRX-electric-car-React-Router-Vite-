@@ -108,3 +108,10 @@
   margin-top: 2rem;
   cursor: pointer;
 }
+
+
+@media (max-width:56.25rem) {
+  .footerInput {
+    width: 20rem;
+  }
+}

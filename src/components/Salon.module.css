@@ -8,12 +8,12 @@
   color: var(--color-white);
   background-color: var(--color-black);
   overflow: hidden;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .salonWrapper:hover {
-    scale: 1.05;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.406);
+  scale: 1.05;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.406);
 }
 
 .salonHeading {
@@ -45,10 +45,27 @@
 }
 
 .salonIcon {
-    font-size: 1.4rem;
-    margin-right: .6rem;
+  font-size: 1.4rem;
+  margin-right: 0.6rem;
 }
 
 .salonBtn {
-    padding: 2rem;
+  padding: 2rem;
+}
+
+@media (max-width: 56.25rem) {
+  .salonWrapper {
+    flex-direction: row;
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+
+  .salonHeadMobile {
+    width: 50%;
+  }
+  .salonInfo {
+    margin-top: 4rem;
+    margin-left: 2rem;
+    align-items: end;
+  }
 }
