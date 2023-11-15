@@ -66,6 +66,37 @@
   .salonInfo {
     margin-top: 4rem;
     margin-left: 2rem;
-    align-items: end;
+    
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .salonWrapper {
+    width: 90%;
+  }
+  .salonInfo {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 31.25rem) {
+  .salonImg {
+    display: none;
+  }
+
+  .salonWrapper {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .salonInfo {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .salonHeading {
+    margin: 0;
+    margin-top: 2rem;
   }
 }

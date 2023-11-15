@@ -78,3 +78,15 @@
     width: 93%;
   }
 }
+
+@media (max-width:37.5rem) {
+  .nav {
+    width: 90%;
+  }
+}
+
+@media (max-width:31.25rem) {
+  .nav {
+    width: 100%;
+  }
+}

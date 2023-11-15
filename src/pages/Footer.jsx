@@ -100,12 +100,13 @@ const Footer = () => {
           )}
         </form>
         <div className={styles.footerInfo}>
-          <div>
+          <div className={styles.footerLogoDiv}>
             <h4 className={styles.footerLogo}>Pirx</h4>
             <BsFacebook className={styles.footerIcon} />
             <BsTwitter className={styles.footerIcon} />
             <BsInstagram className={styles.footerIcon} />
           </div>
+          <div className={styles.footerLinksContainer}>
           <div className={styles.footerLinks}>
             <p className={styles.footerLinksHeading}>O nas</p>
             <ul className={styles.footerLinksList}>
@@ -129,6 +130,7 @@ const Footer = () => {
               <li>Nasze salony</li>
               <li>Kariera w Pirx</li>
             </ul>
+          </div>
           </div>
         </div>
       </section>

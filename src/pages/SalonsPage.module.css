@@ -33,3 +33,15 @@
   flex-direction: column;
   }
 }
+
+@media (max-width: 31.25rem) {
+.salonsHeading {
+  text-align: center;
+  padding: 0;
+}
+
+.salonsText {
+  margin: 0;
+  text-align: center;
+}
+}

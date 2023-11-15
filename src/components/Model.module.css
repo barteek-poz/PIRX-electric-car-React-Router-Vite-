@@ -1,54 +1,53 @@
 .modelWrapper {
-    padding: 0rem 2rem 2rem 2rem;
+  padding: 0rem 2rem 2rem 2rem;
 }
 .modelContainer {
   display: flex;
   background-color: var(--color-black);
   border-radius: 20px;
   overflow: hidden;
-
 }
 
 .modelText {
   display: flex;
   flex-direction: column;
   justify-content: center;
-    color: var(--color-white);
-    border-radius: 20px;
+  color: var(--color-white);
+  border-radius: 20px;
 }
 
 h3 {
-    font-size: 2.8rem;
-    letter-spacing: .2rem;
-    padding: 2rem;
-    margin-left: 2rem;
-    text-transform: uppercase;
+  font-size: 2.8rem;
+  letter-spacing: 0.2rem;
+  padding: 2rem;
+  margin-left: 2rem;
+  text-transform: uppercase;
 }
 
 .modelInfo {
-    font-size: 1.8rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    line-height: 26px;
+  font-size: 1.8rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  line-height: 26px;
 }
 
 .modelTextStats {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 2rem;
-    font-size: 1.8rem;
-    list-style: none;
-    margin-top: 4rem;
-    margin-left: 4rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.8rem;
+  list-style: none;
+  margin-top: 4rem;
+  margin-left: 4rem;
 }
 
 .modelTextSpan {
-    font-weight: 700;
-    font-size: 2rem;
-    margin-right: 5px;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-right: 5px;
 }
-    
+
 .swiper {
   width: 50vw;
   height: 70vh;
@@ -60,20 +59,19 @@ h3 {
 .swiperSlide {
   width: 50%;
   height: 50%;
-  background-size:cover;
+  background-size: cover;
   background-position: center;
-  
 }
 
 @media (max-width: 75rem) {
-  .modelTextStats{
+  .modelTextStats {
     flex-direction: column;
     align-items: start;
   }
 
   .swiper {
     width: 50vw;
-  height: 60vh;
+    height: 60vh;
   }
 }
 
@@ -95,7 +93,21 @@ h3 {
   }
 
   .swiper {
-    width: 100vw;
+    width: 90%;
   }
-  
+}
+
+@media (max-width: 31.25rem) {
+  .modelInfo {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+    margin: 0;
+  }
+  .swiper {
+    width: 80%;
+  }
 }
