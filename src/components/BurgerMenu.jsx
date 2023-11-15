@@ -4,23 +4,24 @@ import Button from "../components/Button";
 import ModalContext from "../context/modalContext";
 import { useContext } from "react";
 
-const BurgerMenu = ({ onBurgerHandler }) => {
+const BurgerMenu = ({ onCloseBurger }) => {
   const ctx = useContext(ModalContext);
 
-  const closeBurgerHandler = () => {
-    onBurgerHandler((prevValue) => !prevValue);
-  };
+  const modalHandler = () => {
+    ctx.onOpenModalHandler()
+    onCloseBurger()
+  }
 
   return (
     <section className={styles.hamburgerWrapper}>
       <div className={styles.hamburgerBtn}>
-        <Button onClick={closeBurgerHandler}>X</Button>
+        <Button onClick={onCloseBurger}>X</Button>
       </div>
 
       <ul className={styles.hamburgerList}>
         <li>
           <Link
-            onClick={closeBurgerHandler}
+            onClick={onCloseBurger}
             to="aboutUs"
             spy={true}
             smooth={true}
@@ -32,7 +33,7 @@ const BurgerMenu = ({ onBurgerHandler }) => {
         </li>
         <li>
           <Link
-            onClick={closeBurgerHandler}
+            onClick={onCloseBurger}
             to="models"
             spy={true}
             smooth={true}
@@ -44,7 +45,7 @@ const BurgerMenu = ({ onBurgerHandler }) => {
         </li>
         <li>
           <Link
-            onClick={closeBurgerHandler}
+            onClick={onCloseBurger}
             to="salons"
             spy={true}
             smooth={true}
@@ -56,7 +57,7 @@ const BurgerMenu = ({ onBurgerHandler }) => {
         </li>
         <li>
           <Link
-            onClick={closeBurgerHandler}
+            onClick={onCloseBurger}
             to="footer"
             spy={true}
             smooth={true}
@@ -68,7 +69,7 @@ const BurgerMenu = ({ onBurgerHandler }) => {
         </li>
         <li>
           <div className={styles.navBookBtn}>
-            <Button onClick={ctx.onOpenModalHandler}>Umów jazdę próbną</Button>
+            <Button onClick={modalHandler}>Umów jazdę próbną</Button>
           </div>
         </li>
       </ul>

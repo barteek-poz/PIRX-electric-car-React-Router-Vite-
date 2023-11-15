@@ -34,6 +34,13 @@ const Navigation = () => {
     setBurgerMenuOpen(true);
   };
 
+  const closeBurgerHandler = () => {
+    setBurgerMenuOpen(false)
+  }
+  const bookingModalHandler = () => {
+    setBurgerMenuOpen(prevValue => !prevValue)
+    ctx.onOpenModalHandler()  }
+
   return (
     <nav>
       <ul
@@ -89,7 +96,7 @@ const Navigation = () => {
             </li>
             <li>
               <div className={styles.navBookBtn}>
-                <Button onClick={ctx.onOpenModalHandler}>
+                <Button onClick={bookingModalHandler}>
                   Umów jazdę próbną
                 </Button>
               </div>
@@ -100,8 +107,8 @@ const Navigation = () => {
           <FiMenu onClick={openBurgerHandler} className={styles.burgerMenu} />
         )}
       </ul>
-      {ctx.bookingModal && !burgerMenuActive && <BookingModal />}
-      {burgerMenuOpen && <BurgerMenu onBurgerHandler={setBurgerMenuOpen}/>}
+      {ctx.bookingModal  && <BookingModal />}
+      {burgerMenuOpen && <BurgerMenu onCloseBurger={closeBurgerHandler}/>}
     </nav>
   );
 };

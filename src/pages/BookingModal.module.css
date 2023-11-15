@@ -134,4 +134,43 @@
     justify-content: center;
     gap: 8rem;
   }
+
+  .inputBox {
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 37.5rem) {
+.formWrapper {
+width: 80vw;
+}
+
+.formHeading {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.4rem;
+}
+}
+
+@media (max-width: 31.25rem) {
+  .formInputs {
+   display: flex;
+   flex-direction: column;
+   gap: 1.4rem;
+  }
+  .formInput {
+    width: 100%;
+  }
+  .inputBox {
+    width: 90%;
+    flex-direction: column;
+  }
+  .formBtns {
+    margin-top: 2rem;
+  }
+  .formHeading {
+    font-size: 1.6rem;
+  }
 }
