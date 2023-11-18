@@ -54,8 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .6rem;
-  
+  gap: 0.6rem;
 }
 
 .footerBtn {
@@ -65,17 +64,17 @@
   font-weight: 300;
 }
 
-
 .errorInput {
   color: var(--color-red);
   font-size: 1.4rem;
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .footerInfo {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 12rem;
   margin-top: 8rem;
 }
 
@@ -109,16 +108,35 @@
   cursor: pointer;
 }
 
+.footerLinksContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+  margin-left: 12rem;
+}
 
-@media (max-width:56.25rem) {
+@media (max-width: 56.25rem) {
   .footerInput {
     width: 20rem;
   }
+
+  .footerLinksContainer {
+    margin-left: 6rem;
+  }
+
+  
+
+  .footerInfo {
+    gap: 4rem;
+    justify-content: space-between;
+  }
+
 }
 
-@media (max-width:50rem) {
+@media (max-width: 50rem) {
   .footerInputs {
-   flex-direction: column;
+    flex-direction: column;
   }
 
   .footerInput {
@@ -128,13 +146,15 @@
   .footerInputContainer {
     margin-bottom: 2rem;
   }
-}
-
-@media (max-width:37.5rem) {
-  .footerInput {
-    width: 30rem;
+  .footerLinksContainer {
+    margin-left: 0rem;
+    gap: 4rem;
   }
 
+
+}
+
+@media (max-width: 43.75rem) {
   .footerLinksHeading {
     font-size: 1.4rem;
   }
@@ -142,13 +162,54 @@
   .footerLinksList {
     font-size: 1.2rem;
   }
+}
+
+@media (max-width: 37.5rem) {
+  .footerInput {
+    width: 30rem;
+  }
+
+  .footerInfo {
+    flex-direction: column;
+    margin-top: 4rem;
+    justify-content: center;
+    align-items: center;
+   
+  }
 
   .footerLogoDiv {
     font-size: 2.4rem;
+   
+  }
+  .footerHeading {
+    text-align: center;
+    padding: 2rem;
+  }
+  .footerLogoDiv {
+    font-size: 2rem;
+    margin: 0 auto;
+  }
+
+  .footerLinksContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+  }
+
+  .footerLinksList {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .footerLinksHeading {
+    font-size: 1.2rem;
+    text-align: center;
   }
 }
 
-@media (max-width:31.25rem) {
+@media (max-width: 31.25rem) {
   .footerInput {
     width: 24rem;
   }
@@ -161,10 +222,7 @@
     padding: 2rem;
   }
 
-  .footerHeading {
-    text-align: center;
-    padding: 2rem;
-  }
+ 
 
   .footerInputs {
     gap: 2rem;
@@ -175,36 +233,12 @@
     text-align: center;
   }
 
-  .footerLogoDiv {
-    font-size: 2rem;
-    margin: 0 auto;
-    margin-bottom: 4rem;
-  }
+ 
 
-  .footerLinksHeading {
-    font-size: 1.2rem;
-    text-align: center;
-    
-    
-  }
+  
 
-  .footerLinksList {
-    font-size: 1rem;
-    text-align: center;
-    margin-top: 2rem;
-  }
+  
 
-  .footerInfo {
-    flex-direction: column;
-    margin-top: 4rem;
-   
-  }
-
-  .footerLinksContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6rem;
-  }
+ 
 
 }

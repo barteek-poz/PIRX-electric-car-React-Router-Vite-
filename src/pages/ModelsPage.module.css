@@ -41,13 +41,13 @@
 
 @media (max-width: 35rem) {
   .modelsContainer {
-    margin-top: 20rem;
+    margin-top: 16rem;
   }
 }
 
 @media (max-width: 31.25rem) {
   .modelsContainer {
-    margin-top: 40rem;
+    margin-top: 30rem;
     margin-left: 0;
     margin-right: 0;
   }
@@ -62,4 +62,11 @@
   padding: 1rem;
   padding-top: 2rem;
  }
+ }
+
+ @media (max-width: 25rem) {
+  .modelsContainer{
+    margin-top: 40rem;
+
+  }
  }

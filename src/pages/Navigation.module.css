@@ -75,6 +75,12 @@
 
 @media (max-width:56.25rem) {
   .nav {
+    width: 95%;
+  }
+}
+
+@media (max-width: 43.75rem) {
+  .nav {
     width: 93%;
   }
 }

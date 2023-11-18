@@ -88,7 +88,7 @@ const ModalOverlay = (props) => {
             <h2 className={styles.formHeading}>
               Zarezerwuj jazdę próbną w PIRX
             </h2>
-            <p>
+            <p className={styles.formText}> 
               Podaj swoje dane kontaktowe, następnie wybierz model auta oraz
               salon w którym chciałbyś odbyć jazdę próbną. Nasz konsultant
               skontaktuje się z Tobą, aby wybrać dogodny dla Ciebie termin.{" "}
