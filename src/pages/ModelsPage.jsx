@@ -13,6 +13,8 @@ import nostromo1 from "../img/nostromo1.jpg";
 import nostromo2 from "../img/nostromo2.jpg";
 import nostromo3 from "../img/nostromo3.jpg";
 import useFetch from "../hooks/useFetch";
+import CenterContainer from "../components/CenterContainer";
+import Footer from '../pages/Footer'
 
 const modelsImg = {
   lena: {
@@ -38,21 +40,26 @@ const ModelsPage = () => {
   );
 
   return (
-    <section className={styles.modelsContainer} id="models">
-      <h2 className={styles.modelsHeading}>Modele</h2>
-      <p className={styles.modelsText}>
-        PIRX odpowiada na wyzwania dzisiejszego świata i jego mieszkańców.
-        Niezależnie jakie pokolenie reprezentujesz, jakie zawód wykonujesz, czy
-        o czym marzysz, nasze samochody dopasują się do Ciebie idealnie. Poznaj
-        nasze modele aut i umów się na jazdę próbną.{" "}
-      </p>
+    <CenterContainer>
+      <section className={styles.modelsContainer} id="models">
+        <div className={styles.modelsContainerText}>
+          <h2 className={styles.modelsHeading}>Modele</h2>
+          <p className={styles.modelsText}>
+            PIRX odpowiada na wyzwania dzisiejszego świata i jego mieszkańców.
+            Niezależnie jakie pokolenie reprezentujesz, jakie zawód wykonujesz,
+            czy o czym marzysz, nasze samochody dopasują się do Ciebie idealnie.
+            Poznaj nasze modele aut i umów się na jazdę próbną.{" "}
+          </p>
+        </div>
 
-      {data && <Model data={data.m1} img={modelsImg.lena}></Model>}
+        {data && <Model data={data.m1} img={modelsImg.lena}></Model>}
 
-      {data && <Model data={data.m2} img={modelsImg.anna}></Model>}
+        {data && <Model data={data.m2} img={modelsImg.anna}></Model>}
 
-      {data && <Model data={data.m3} img={modelsImg.nostromo}></Model>}
-    </section>
+        {data && <Model data={data.m3} img={modelsImg.nostromo}></Model>}
+      </section>
+      <Footer/>
+    </CenterContainer>
   );
 };
 

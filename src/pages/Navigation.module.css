@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 97%;
+  width: 100%;
   padding: 2rem;
   color: var(--color-white);
   background-color: var(--color-black);
@@ -19,11 +19,22 @@
 }
 
 .logo {
+  max-width: 80px;
   font-size: 3rem;
   font-weight: 300;
   letter-spacing: 4px;
   margin-left: 4rem;
   margin-right: 4rem;
+  transition: .5s;
+  outline: none;
+  text-decoration: none;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.logo:hover {
+  letter-spacing: 8px;
+  
 }
 
 .navLinks {
@@ -42,6 +53,7 @@
   transition: all 0.3s;
   border: 1px solid transparent;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .navBtn:hover,

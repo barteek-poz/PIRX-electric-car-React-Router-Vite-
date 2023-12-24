@@ -5,6 +5,7 @@ import poznan from "../img/poznan.jpg";
 import warsaw from "../img/warsaw.jpg";
 import cracow from "../img/cracow.jpg";
 import useFetch from "../hooks/useFetch";
+import Footer from "./Footer";
 
 const salonsImg = {
   poznan: {
@@ -35,6 +36,7 @@ const SalonsPage = () => {
         {data && <Salon data={data.s2} img={salonsImg.warsaw.img} />}
         {data && <Salon data={data.s3} img={salonsImg.cracow.img} />}
       </div>
+      <Footer />
     </section>
   );
 };

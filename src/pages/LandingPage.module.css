@@ -1,7 +1,8 @@
 .landingPage {
-  width: 100vw;
+  position: relative;
+  top: -50px;
   height: 100vh;
-  padding: 2rem 2rem 0 2rem;
+  z-index: 0;
 }
 
 .heroImg {
@@ -33,8 +34,14 @@
 }
 
 .heroBtn {
+  text-decoration: none;
+  color: var(--color-white);
   display: inline-block;
   font-size: 1.4rem;
+}
+
+.heroBtn:hover a{
+  color: var(--color-black);
 }
 
 @media (max-width: 50rem) {

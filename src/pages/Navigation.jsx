@@ -3,9 +3,10 @@ import Button from "../components/Button";
 import styles from "./Navigation.module.css";
 import BookingModal from "./BookingModal";
 import ModalContext from "../context/modalContext";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import BurgerMenu from "../components/BurgerMenu";
+import CenterContainer from "../components/CenterContainer";
 
 const Navigation = () => {
   const [navFixed, setNavFixed] = useState(false);
@@ -47,72 +48,54 @@ const Navigation = () => {
   };
 
   return (
-    <nav>
-      <ul
-        className={styles.nav}
-        style={{
-          position: navFixed ? "fixed" : "absolute",
-          marginTop: navFixed ? "-2rem" : "0rem",
-        }}>
-        <li>
-          <span className={styles.logo}>PIRX</span>
-        </li>
-        {!burgerMenuActive && (
-          <>
-            <li>
-              <div className={styles.navLinks}>
-                <Link
-                  to="aboutUs"
-                  spy={true}
-                  smooth={true}
-                  offset={-50}
-                  duration={500}
-                  className={styles.navBtn}>
-                  O nas
-                </Link>
-                <Link
-                  to="models"
-                  spy={true}
-                  smooth={true}
-                  offset={-25}
-                  duration={500}
-                  className={styles.navBtn}>
-                  Modele
-                </Link>
-                <Link
-                  to="salons"
-                  spy={true}
-                  smooth={true}
-                  offset={25}
-                  duration={500}
-                  className={styles.navBtn}>
-                  Salony
-                </Link>
-                <Link
-                  to="footer"
-                  spy={true}
-                  smooth={true}
-                  offset={25}
-                  duration={500}
-                  className={styles.navBtn}>
-                  Kontakt
-                </Link>
-              </div>
-            </li>
-            <li>
-              <div className={styles.navBookBtn}>
-                <Button onClick={bookingModalHandler}>Umów jazdę próbną</Button>
-              </div>
-            </li>{" "}
-          </>
-        )}
-        {burgerMenuActive && (
-          <FiMenu onClick={openBurgerHandler} className={styles.burgerMenu} />
-        )}
-      </ul>
-      {ctx.bookingModal && <BookingModal />}
-      {burgerMenuOpen && <BurgerMenu onCloseBurger={closeBurgerHandler} />}
-    </nav>
+    <CenterContainer>
+      <nav>
+        <ul className={styles.nav}>
+          <Link className={styles.logo} to='/'>
+            PIRX
+          </Link>
+          {!burgerMenuActive && (
+            <>
+              <li>
+                <div className={styles.navLinks}>
+                  <Link className={styles.navBtn} to="/about">O nas</Link>
+                  <Link className={styles.navBtn}
+                    to='/models'>
+                    Modele
+                  </Link>
+                  <Link className={styles.navBtn}
+                    to="/salons"
+                    >
+                    Salony
+                  </Link>
+                  <Link className={styles.navBtn}
+                    to="/contact"
+                    >
+                    Kontakt
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <div className={styles.navBookBtn}>
+                  <Link to='/contact'
+                  >
+                    <Button>
+                      
+                    Umów jazdę próbną
+                    </Button>
+                  </Link>
+                </div>
+              </li>{" "}
+            </>
+          )}
+          {burgerMenuActive && (
+            <FiMenu onClick={openBurgerHandler} className={styles.burgerMenu} />
+          )}
+        </ul>
+        {ctx.bookingModal && <BookingModal />}
+        {burgerMenuOpen && <BurgerMenu onCloseBurger={closeBurgerHandler} />}
+      </nav>
+    </CenterContainer>
   );
 };
 

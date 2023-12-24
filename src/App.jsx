@@ -9,7 +9,6 @@ import Footer from "./pages/Footer";
 function App() {
   return (
     <>
-   
       <LandingPage />
       <AboutUs />
       <ModelsPage />

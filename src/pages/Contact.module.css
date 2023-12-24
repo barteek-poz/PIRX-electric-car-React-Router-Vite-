@@ -1,0 +1,169 @@
+.formWrapper {
+  position: relative;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  overflow: hidden;
+  border-radius: 20px;
+  padding-top: 60px;
+  top: -40px;
+ z-index: 0;
+}
+
+.formInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: start;
+  justify-content: center;
+  padding: 2rem;
+}
+.formHeader {
+  grid-column: 1/3;
+  font-size: 1rem;
+  text-align: center;
+}
+.formHeading {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.formText {
+  font-size: 1.6rem;
+}
+
+.formInput {
+  width: 90%;
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-white);
+  border-radius: 5px;
+  padding: 0.6rem;
+  outline: none;
+  margin-bottom: 0.6rem;
+}
+
+.inputBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formInput:focus {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+}
+
+.errorInput {
+  color: var(--color-red);
+  padding: 0.4rem;
+}
+
+.formConfirm {
+  font-size: 1.4rem;
+  grid-column: 1/3;
+  text-align: center;
+  color: var(--color-green);
+}
+
+.formBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  grid-column: 1/3;
+}
+
+.bookingImg {
+  background-size: cover;
+  background-position: center;
+  background-color: blue;
+  border-radius: 20px;
+}
+
+@media (max-width: 68.75rem) {
+  .formWrapper {
+    width: 80vw;
+  }
+}
+@media (max-width: 56.25rem) {
+  .bookingImg {
+    display: none;
+  }
+
+  .formWrapper {
+    width: 70vw;
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .formHeader {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .formHeading {
+    font-size: 2.4rem;
+  }
+
+  .formInputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 0.5fr);
+    gap: 1rem;
+    align-self: self-start;
+    padding: 2rem;
+  }
+
+  .formInput {
+    margin-bottom: 0;
+  }
+
+  .formBtns {
+    justify-content: center;
+    gap: 8rem;
+  }
+
+  .inputBox {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .formWrapper {
+    width: 80vw;
+  }
+
+  .formHeading {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 31.25rem) {
+  .formInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+  .formInput {
+    width: 100%;
+  }
+  .inputBox {
+    width: 90%;
+    flex-direction: column;
+  }
+  .formBtns {
+    margin-top: 2rem;
+  }
+  .formHeading {
+    font-size: 1.6rem;
+  }
+}
