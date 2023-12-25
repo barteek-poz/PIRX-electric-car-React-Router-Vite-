@@ -15,10 +15,7 @@ const LandingPage = () => {
             </h1>
             <div className={styles.heroBtn}>
               <Button>
-                <Link
-                  to="/about"
-                  className={styles.heroBtn}
-                  >
+                <Link to="/about" className={styles.heroBtn}>
                   Poznajmy się
                 </Link>
               </Button>

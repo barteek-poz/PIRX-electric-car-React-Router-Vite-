@@ -1,6 +1,5 @@
 import styles from "./Contact.module.css";
 import React, { useContext, useState } from "react";
-import { createPortal } from "react-dom";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
 import bookingImg from "../img/booking.jpg";
@@ -40,7 +39,6 @@ const Contact = () => {
   const selectStyles = {
     control: (styles) => ({
       ...styles,
-      width: "100%",
       borderRadius: "5px",
       fontSize: "1.6rem",
     }),
@@ -75,9 +73,8 @@ const Contact = () => {
 
   return (
     <CenterContainer>
-
       <div className={styles.formWrapper}>
-        <form className={styles.formInputs}>
+        <form className={styles.formInputs} onSubmit={onSubmitForm}>
           <div className={styles.formHeader}>
             <h2 className={styles.formHeading}>
               Zarezerwuj jazdę próbną w PIRX
@@ -88,7 +85,7 @@ const Contact = () => {
               skontaktuje się z Tobą, aby wybrać dogodny dla Ciebie termin.{" "}
             </p>
           </div>
-          <div className={styles.inputBox}>
+          <div className={styles.row}>
             <input
               className={styles.formInput}
               placeholder="Imię"
@@ -100,8 +97,7 @@ const Contact = () => {
             {errors.name && errors.name.type === "required" && (
               <p className={styles.errorInput}>Name is required</p>
             )}
-          </div>
-          <div className={styles.inputBox}>
+
             <input
               className={styles.formInput}
               placeholder="Nazwisko"
@@ -111,10 +107,11 @@ const Contact = () => {
                 required: "Name is required",
               })}></input>
             {errors.name && errors.name.type === "required" && (
-              <p className={styles.errorInput}>Name is required</p>
+              <p className={styles.errorInput}>Surname is required</p>
             )}
           </div>
-          <div className={styles.inputBox}>
+
+          <div className={styles.row}>
             <input
               className={styles.formInput}
               placeholder="Email"
@@ -133,8 +130,7 @@ const Contact = () => {
             {errors.email && errors.email.type === "pattern" && (
               <p className={styles.errorInput}>{errors.email.message}</p>
             )}
-          </div>
-          <div className={styles.inputBox}>
+
             <input
               className={styles.formInput}
               placeholder="Telefon"
@@ -151,22 +147,24 @@ const Contact = () => {
               <p className={styles.errorInput}>{errors.phone.message}</p>
             )}
           </div>
-          <div className={styles.inputBox}>
+          <div className={styles.row}>
             <Select
               placeholder="Wybierz salon"
               value={salon}
               onChange={salonChangeHandler}
               options={carSalons}
-              styles={selectStyles}></Select>
+              styles={selectStyles}
+              className={styles.select}></Select>
+
             {errorSalon && <p className={styles.errorInput}>Wybierz salon</p>}
-          </div>
-          <div className={styles.inputBox}>
             <Select
               placeholder="Wybierz model"
               value={model}
               onChange={modelChangeHandler}
               options={carModels}
-              styles={selectStyles}></Select>
+              styles={selectStyles}
+              className={styles.select}></Select>
+
             {errorModel && <p className={styles.errorInput}>Wybierz model</p>}
           </div>
           {formValid && (
@@ -189,9 +187,7 @@ const Contact = () => {
           className={styles.bookingImg}
           style={{ backgroundImage: `url(${bookingImg})` }}></div>
       </div>
-  
     </CenterContainer>
-    
   );
 };
 

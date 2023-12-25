@@ -11,13 +11,15 @@
   top: -40px;
  z-index: 0;
 }
-
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    
+}
 .formInputs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  align-items: start;
-  justify-content: center;
   padding: 2rem;
 }
 .formHeader {
@@ -33,10 +35,12 @@
 
 .formText {
   font-size: 1.6rem;
+  margin: 4rem 0;
 }
 
 .formInput {
-  width: 90%;
+    
+  width: 100%;
   text-align: center;
   font-size: 1.6rem;
   color: var(--color-black);
@@ -48,12 +52,9 @@
   margin-bottom: 0.6rem;
 }
 
-.inputBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.select {
+    width: 100%;
 }
-
 .formInput:focus {
   background-color: var(--color-black);
   color: var(--color-white);
