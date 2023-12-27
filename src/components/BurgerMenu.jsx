@@ -1,4 +1,4 @@
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import styles from "./BurgerMenu.module.css";
 import Button from "../components/Button";
 import ModalContext from "../context/modalContext";
@@ -22,11 +22,8 @@ const BurgerMenu = ({ onCloseBurger }) => {
         <li>
           <Link
             onClick={onCloseBurger}
-            to="aboutUs"
-            spy={true}
-            smooth={true}
-            offset={-50}
-            duration={500}
+            to="/about"
+           
             className={styles.navBtn}>
             O nas
           </Link>
@@ -34,11 +31,8 @@ const BurgerMenu = ({ onCloseBurger }) => {
         <li>
           <Link
             onClick={onCloseBurger}
-            to="models"
-            spy={true}
-            smooth={true}
-            offset={-25}
-            duration={500}
+            to="/models"
+            
             className={styles.navBtn}>
             Modele
           </Link>
@@ -46,11 +40,8 @@ const BurgerMenu = ({ onCloseBurger }) => {
         <li>
           <Link
             onClick={onCloseBurger}
-            to="salons"
-            spy={true}
-            smooth={true}
-            offset={25}
-            duration={500}
+            to="/salons"
+            
             className={styles.navBtn}>
             Salony
           </Link>
@@ -58,11 +49,8 @@ const BurgerMenu = ({ onCloseBurger }) => {
         <li>
           <Link
             onClick={onCloseBurger}
-            to="footer"
-            spy={true}
-            smooth={true}
-            offset={25}
-            duration={500}
+            to="contact"
+            
             className={styles.navBtn}>
             Kontakt
           </Link>

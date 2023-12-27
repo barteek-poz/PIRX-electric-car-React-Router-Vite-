@@ -76,35 +76,10 @@
 }
 
 @media (max-width: 75rem) {
-  .nav {
-    width: 95%
-  }
-
+  
   .navLinks {
     gap: 4rem
   }
 }
 
-@media (max-width:56.25rem) {
-  .nav {
-    width: 95%;
-  }
-}
 
-@media (max-width: 43.75rem) {
-  .nav {
-    width: 93%;
-  }
-}
-
-@media (max-width:37.5rem) {
-  .nav {
-    width: 90%;
-  }
-}
-
-@media (max-width:31.25rem) {
-  .nav {
-    width: 100%;
-  }
-}
