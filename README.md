@@ -1,7 +1,7 @@
 **P I R X**
 
 Pirx to projekt fikcyjnej firmy produkującej auta elektryczne, można ją obejrzeć pod linkiem: https://animated-dusk-d95695.netlify.app.
-Strona została napisana w React+Vite, natomiast dane samochodów i salonów pobierane są z bazy Firebase. Do walidacji inputów oraz select użyłem React Hook Form oraz react-select. Strona jest w pełni responsywna. Wygląd strony jest mocną inspiracją projektu dieCar (https://dribbble.com/shots/21228185-dieCar-Shop-Page), natomiast copy i logikę strony stworzyłem samodzielnie. 
+Strona została napisana w React Router i Vite, natomiast dane samochodów i salonów pobierane są z bazy Firebase. Do walidacji inputów oraz select użyłem React Hook Form oraz react-select. Strona jest w pełni responsywna. Wygląd strony jest mocną inspiracją projektu dieCar (https://dribbble.com/shots/21228185-dieCar-Shop-Page), natomiast copy i logikę strony stworzyłem samodzielnie. 
 
 ![Zrzut ekranu 2023-11-18 o 14 53 14](https://github.com/barteek-poz/PIRX-electric-car-React-Vite-/assets/109816351/503e0079-be78-4c3e-819d-f2d4abd36e9c)
 ![Zrzut ekranu 2023-11-18 o 14 55 59](https://github.com/barteek-poz/PIRX-electric-car-React-Vite-/assets/109816351/c69143c3-28e1-48c2-8932-9d05cf6fd0f6)
