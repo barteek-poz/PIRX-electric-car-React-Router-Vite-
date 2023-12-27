@@ -6,6 +6,7 @@ import warsaw from "../img/warsaw.jpg";
 import cracow from "../img/cracow.jpg";
 import useFetch from "../hooks/useFetch";
 import Footer from "./Footer";
+import { useLoaderData } from "react-router-dom";
 
 const salonsImg = {
   poznan: {
@@ -20,9 +21,7 @@ const salonsImg = {
 };
 
 const SalonsPage = () => {
-  const { data } = useFetch(
-    "https://pirx-dfe1d-default-rtdb.europe-west1.firebasedatabase.app/salons.json"
-  );
+  const data  = useLoaderData();
 
   return (
     <section className={styles.salonsContainer} id="salons">

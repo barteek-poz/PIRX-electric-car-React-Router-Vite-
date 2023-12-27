@@ -86,86 +86,96 @@ const Contact = () => {
             </p>
           </div>
           <div className={styles.row}>
-            <input
-              className={styles.formInput}
-              placeholder="Imię"
-              type="text"
-              name="name"
-              {...register("name", {
-                required: "Name is required",
-              })}></input>
-            {errors.name && errors.name.type === "required" && (
-              <p className={styles.errorInput}>Name is required</p>
-            )}
-
-            <input
-              className={styles.formInput}
-              placeholder="Nazwisko"
-              type="text"
-              name="surname"
-              {...register("name", {
-                required: "Name is required",
-              })}></input>
-            {errors.name && errors.name.type === "required" && (
-              <p className={styles.errorInput}>Surname is required</p>
-            )}
+            <div className={styles.inputBox}>
+              <input
+                className={styles.formInput}
+                placeholder="Imię"
+                type="text"
+                name="name"
+                {...register("name", {
+                  required: "Name is required",
+                })}></input>
+              {errors.name && errors.name.type === "required" && (
+                <p className={styles.errorInput}>Name is required</p>
+              )}
+            </div>
+            <div className={styles.inputBox}>
+              <input
+                className={styles.formInput}
+                placeholder="Nazwisko"
+                type="text"
+                name="surname"
+                {...register("name", {
+                  required: "Name is required",
+                })}></input>
+              {errors.name && errors.name.type === "required" && (
+                <p className={styles.errorInput}>Surname is required</p>
+              )}
+            </div>
           </div>
 
           <div className={styles.row}>
-            <input
-              className={styles.formInput}
-              placeholder="Email"
-              type="text"
-              name="email"
-              {...register("email", {
-                required: "Email is requierd",
-                pattern: {
-                  value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
-                  message: "Wymagany format : xxx@xx.xx",
-                },
-              })}></input>
-            {errors.email && errors.email.type === "required" && (
-              <p className={styles.errorInput}>Podaj adres email</p>
-            )}
-            {errors.email && errors.email.type === "pattern" && (
-              <p className={styles.errorInput}>{errors.email.message}</p>
-            )}
-
-            <input
-              className={styles.formInput}
-              placeholder="Telefon"
-              type="number"
-              name="phone"
-              {...register("phone", {
-                required: "Podaj numer telefonu",
-                minLength: {
-                  value: 9,
-                  message: "Numer powinien mieć 9 cyfr",
-                },
-              })}></input>
-            {errors.phone && errors.phone.type && (
-              <p className={styles.errorInput}>{errors.phone.message}</p>
-            )}
+            <div className={styles.inputBox}>
+              <input
+                className={styles.formInput}
+                placeholder="Email"
+                type="text"
+                name="email"
+                {...register("email", {
+                  required: "Email is requierd",
+                  pattern: {
+                    value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                    message: "Wymagany format : xxx@xx.xx",
+                  },
+                })}></input>
+              {errors.email && errors.email.type === "required" && (
+                <p className={styles.errorInput}>Podaj adres email</p>
+              )}
+              {errors.email && errors.email.type === "pattern" && (
+                <p className={styles.errorInput}>{errors.email.message}</p>
+              )}
+            </div>
+            <div className={styles.inputBox}>
+              <input
+                className={styles.formInput}
+                placeholder="Telefon"
+                type="number"
+                name="phone"
+                {...register("phone", {
+                  required: "Podaj numer telefonu",
+                  minLength: {
+                    value: 9,
+                    message: "Numer powinien mieć 9 cyfr",
+                  },
+                })}></input>
+              {errors.phone && errors.phone.type && (
+                <p className={styles.errorInput}>{errors.phone.message}</p>
+              )}
+            </div>
           </div>
           <div className={styles.row}>
-            <Select
-              placeholder="Wybierz salon"
-              value={salon}
-              onChange={salonChangeHandler}
-              options={carSalons}
-              styles={selectStyles}
-              className={styles.select}></Select>
+            <div className={styles.inputBox}>
+              <Select
+                placeholder="Wybierz salon"
+                value={salon}
+                onChange={salonChangeHandler}
+                options={carSalons}
+                styles={selectStyles}
+                className={styles.select}></Select>
 
-            {errorSalon && <p className={styles.errorInput}>Wybierz salon</p>}
-            <Select
-              placeholder="Wybierz model"
-              value={model}
-              onChange={modelChangeHandler}
-              options={carModels}
-              styles={selectStyles}
-              className={styles.select}></Select>
+              {errorSalon && <p className={styles.errorInput}>Wybierz salon</p>}
+            </div>
+            <div className={styles.inputBox}>
+              <Select
+                placeholder="Wybierz model"
+                value={model}
+                onChange={modelChangeHandler}
+                options={carModels}
+                styles={selectStyles}
+                className={styles.select}></Select>
 
-            {errorModel && <p className={styles.errorInput}>Wybierz model</p>}
+              {errorModel && <p className={styles.errorInput}>Wybierz model</p>}
+            </div>
           </div>
           {formValid && (
             <p className={styles.formConfirm}>

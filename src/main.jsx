@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { ModalContextProvider } from "./context/modalContext.jsx";
+
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AboutUs from "../src/pages/AboutUs.jsx";
@@ -11,6 +11,8 @@ import ModelsPage from "./pages/ModelsPage.jsx";
 import LandingPage from "./pages/LandingPage.jsx";
 import SalonsPage from "./pages/SalonsPage.jsx";
 import Contact from "./pages/Contact.jsx";
+import SalonsLoader from "./loaders/SalonsLoader.js";
+import ModelsLoader from "./loaders/ModelsLoader.js";
 
 const router = createBrowserRouter([
   {
@@ -28,10 +30,12 @@ const router = createBrowserRouter([
       {
         path: "/models",
         element: <ModelsPage />,
+        loader: ModelsLoader
       },
       {
         path: "/salons",
         element: <SalonsPage />,
+        loader: SalonsLoader
       },
       {
         path: "/contact",

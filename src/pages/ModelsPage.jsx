@@ -14,7 +14,8 @@ import nostromo2 from "../img/nostromo2.jpg";
 import nostromo3 from "../img/nostromo3.jpg";
 import useFetch from "../hooks/useFetch";
 import CenterContainer from "../components/CenterContainer";
-import Footer from '../pages/Footer'
+import Footer from "../pages/Footer";
+import { useLoaderData } from "react-router-dom";
 
 const modelsImg = {
   lena: {
@@ -35,9 +36,7 @@ const modelsImg = {
 };
 
 const ModelsPage = () => {
-  const { data } = useFetch(
-    "https://pirx-dfe1d-default-rtdb.europe-west1.firebasedatabase.app/models.json"
-  );
+  const data = useLoaderData();
 
   return (
     <CenterContainer>
@@ -58,7 +57,7 @@ const ModelsPage = () => {
 
         {data && <Model data={data.m3} img={modelsImg.nostromo}></Model>}
       </section>
-      <Footer/>
+      <Footer />
     </CenterContainer>
   );
 };
