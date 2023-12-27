@@ -8,9 +8,9 @@ const BurgerMenu = ({ onCloseBurger }) => {
   const ctx = useContext(ModalContext);
 
   const modalHandler = () => {
-    ctx.onOpenModalHandler()
-    onCloseBurger()
-  }
+    ctx.onOpenModalHandler();
+    onCloseBurger();
+  };
 
   return (
     <section className={styles.hamburgerWrapper}>
@@ -20,38 +20,22 @@ const BurgerMenu = ({ onCloseBurger }) => {
 
       <ul className={styles.hamburgerList}>
         <li>
-          <Link
-            onClick={onCloseBurger}
-            to="/about"
-           
-            className={styles.navBtn}>
+          <Link onClick={onCloseBurger} to="/about" className={styles.navBtn}>
             O nas
           </Link>
         </li>
         <li>
-          <Link
-            onClick={onCloseBurger}
-            to="/models"
-            
-            className={styles.navBtn}>
+          <Link onClick={onCloseBurger} to="/models" className={styles.navBtn}>
             Modele
           </Link>
         </li>
         <li>
-          <Link
-            onClick={onCloseBurger}
-            to="/salons"
-            
-            className={styles.navBtn}>
+          <Link onClick={onCloseBurger} to="/salons" className={styles.navBtn}>
             Salony
           </Link>
         </li>
         <li>
-          <Link
-            onClick={onCloseBurger}
-            to="contact"
-            
-            className={styles.navBtn}>
+          <Link onClick={onCloseBurger} to="contact" className={styles.navBtn}>
             Kontakt
           </Link>
         </li>

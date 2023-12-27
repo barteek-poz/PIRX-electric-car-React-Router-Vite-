@@ -93,20 +93,19 @@
   width: 100%;
 }
 
-@media (max-width: 68.75rem) {
-  .formWrapper {
-    width: 80vw;
-  }
-}
+
 @media (max-width: 56.25rem) {
   .bookingImg {
     display: none;
   }
 
   .formWrapper {
-    width: 70vw;
+    
+    width: 100%;
     height: auto;
+    margin: 0 auto;
     grid-template-columns: 1fr;
+    
   }
 
   .formHeader {
@@ -118,14 +117,6 @@
     font-size: 2.4rem;
   }
 
-  .formInputs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 0.5fr);
-    gap: 1rem;
-    align-self: self-start;
-    padding: 2rem;
-  }
 
   .formInput {
     margin-bottom: 0;
@@ -142,10 +133,7 @@
 }
 
 @media (max-width: 37.5rem) {
-  .formWrapper {
-    width: 80vw;
-  }
-
+  
   .formHeading {
     font-size: 2rem;
   }
